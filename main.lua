@@ -244,8 +244,8 @@ function DialogKey:ClickButtons()				-- Main function to click on dialog buttons
 			for i=1,9 do
 				if GossipFrame_GetTitleButton(i) then
 					if GossipFrame_GetTitleButton(i).Icon:IsVisible() and (
-						GossipFrame_GetTitleButton(i).Icon:GetTexture() == "Interface/GossipFrame/ActiveQuestIcon" or
-						GossipFrame_GetTitleButton(i).Icon:GetTexture() == "Interface/GossipFrame/ActiveLegendaryQuestIcon") then
+						GossipFrame_GetTitleButton(i).Icon:GetTexture() == "Interface\\GossipFrame\\ActiveQuestIcon" or
+						GossipFrame_GetTitleButton(i).Icon:GetTexture() == "Interface\\GossipFrame\\ActiveLegendaryQuestIcon") then
 					
 						return DialogKey:ClickFrame(GossipFrame_GetTitleButton(i))
 					end
@@ -344,6 +344,7 @@ function DialogKey:GetQuestButtons()			-- Return sorted list of quest button fra
 		})
 	end
 	
+	--[[
 	table.sort(frames,function(a,b)
 		if a.top > b.top then
 			return 1
@@ -353,6 +354,7 @@ function DialogKey:GetQuestButtons()			-- Return sorted list of quest button fra
 		
 		return 0
 	end)
+	]]--
 	
 	return frames
 end
